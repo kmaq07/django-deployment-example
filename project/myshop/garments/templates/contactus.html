@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+<div class="container"> 
+  <h2>this is my contact page</h2>
+  <p>you can ask for our number and u can also call us for more information</p>
+  <form name="form" action="" method="POST">
+     {% csrf_token %}
+     {{form.as_p}}
+  <button type="/thankyou">Submit</button>
+</div>
+{% endblock %}

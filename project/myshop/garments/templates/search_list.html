@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<div class="container">
+<h3>search results</h3>
+<hr>
+{% for i in match1 %}
+    Shirt name={{i.name}}<br>
+    Description={{i.desc}}<br>
+    Price={{i.price}}<br>
+    {% if i.available %}Available
+    {% else %}Not Available
+    {% endif %}<br>
+{% endfor %}
+</div>
+{% endblock %}

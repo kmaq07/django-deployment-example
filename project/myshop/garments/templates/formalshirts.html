@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+<div class ="container">
+<h3>all formal shirts</h3>
+<table width=100% border=1>
+    {% for i in lst %}
+    <tr>
+      <td width=50%><h2>{{i.name}}</h2>
+      <img src="{{i.photo.url}}" width=200 height=250 alt="formalshirt from mygarment.com"> 
+      </td>
+      <td width=50%>product details:</h2>
+      Name={{i.name}}<br>
+      Price={{i.price}}<br>
+      Quantity={{i.stock}}<br>
+      Availability={% if i.available %}Available
+      {% else %}Not Available
+      {% endif %}<br>
+      Created={{i.created}}<br>
+      Updated={{i.updated}}<br>
+      Description={{i.desc}}<br>
+     <a href="cart{{i.id}}">Click Here To Add To Cart</a><br>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <hr>
+</div>
+{% endblock %}
